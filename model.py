@@ -1,5 +1,4 @@
-import numpy as np
-import h5py
+from libraries import np, h5py
 from helpers import gradient_checking, model
 
 # array that has L elements which represents the number of units in each layer including the input layer
