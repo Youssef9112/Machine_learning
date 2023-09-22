@@ -1,4 +1,4 @@
-import numpy as np
+from libraries import np, train_test_split
 
 layers_dims = [12288, 20, 7, 5, 1]
 activations = ["sigmoid", "relu", "relu", "relu", "sigmoid"]
@@ -201,6 +201,31 @@ def predict(X: np.ndarray, Y: np.ndarray, parameters: dict, activations: list):
     AL = np.round(AL, 0).astype(int)
     print("Accuracy: " + str(np.sum((AL == Y) / Y.shape[1])))
     return AL
+
+
+def regularization_cost(parameters):
+    sum = 0
+    for l in range(L):
+        sum += np.sum(parameters["W" + str(l + 1)] ** 2)
+    return sum
+
+
+def split_data(X, Y, train_perc, dev_perc):
+    dev_test_total = 1 - train_perc
+    x_train, y_train, x_tmp, y_tmp = train_test_split(
+        X, Y, train_size=train_perc, shuffle=True
+    )
+    x_cv, y_cv, x_test, y_test = train_test_split(
+        x_tmp, y_tmp, train_size=dev_perc / dev_test_total, shuffle=True
+    )
+    return {
+        "x_train": x_train,
+        "y_train": y_train,
+        "x_cv": x_cv,
+        "y_cv": y_cv,
+        "x_test": x_test,
+        "y_test": y_test,
+    }
 
 
 if __name__ == "__main__":
