@@ -9,7 +9,7 @@ This project is a Python implementation of a neural network for binary classific
 
 **Gradient Checking:** Gradient checking is included to ensure that the gradient computations are accurate and that the model is learning properly. This is a crucial feature for debugging and ensuring the correctness of the implementation.
 
-**Regularization:** The neural network supports regularization techniques to prevent overfitting, including L1 and L2 regularization.
+**Regularization:** The neural network supports regularization techniques to prevent overfitting using L2 regularization.
 
 
 
