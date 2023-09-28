@@ -11,5 +11,7 @@ This project is a Python implementation of a neural network for binary classific
 
 **Regularization:** The neural network supports regularization techniques to prevent overfitting using L2 regularization.
 
+**One-Hot Encoding:** The project includes utilities for one-hot encoding categorical variables, making it easier to work with categorical data.
 
+**Label Encoding:** Label encoding is also available for converting categorical labels into numeric form.
 
